@@ -3,7 +3,7 @@ import * as bodyParser from "body-parser";
 import * as cors from "cors";
 import * as http from "http";
 
-import { dbConnect } from './../db/index';
+import { dbConnect } from './db/index';
 import route from './routes/index';
 
 const app = express();
@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static("static"));
 
-dbConnect();
+// dbConnect();
 
 
 
@@ -25,7 +25,7 @@ server.listen(4000, () => {
 
 
 app.get("/ok", (req, res) => {
-    res.send("Yes WORKING now");
-  });
+  res.send("Yes WORKING now");
+});
 
-app.use("/get", route); 
+app.use("/get", route);
